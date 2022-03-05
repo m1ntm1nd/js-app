@@ -1,6 +1,8 @@
 import Mainpage from "./views/Mainpage.js"
 import InfoPage from "./views/InfoPage.js"
 import NetPage from "./views/NetPage.js"
+import ContractsPage from "./views/ContractsPage.js"
+
 const navigateTo = url => {
     history.pushState(null, null, url);
     router();
@@ -10,7 +12,8 @@ const router = async () => {
     const routes = [
         { path: "/", view:  Mainpage},
         { path: "/info", view:  InfoPage},        
-        { path: "/net", view: NetPage}, 
+        { path: "/net", view: NetPage},
+        { path: "/cntrcts", view: ContractsPage} 
     ];
 
     const potentialMatches = routes.map(route => {
@@ -47,6 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     router();
 });
+
 
 // let match = potentialMatches.find(potentialMatch => potentialMatch.result !== null);
 
